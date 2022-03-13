@@ -4,6 +4,10 @@ export const useForm = (estadoInicial = {}) => {
   
   const [values, setValues] = useState(estadoInicial);
   
+  const reset = ( )=> {
+    setValues(estadoInicial)
+  } 
+
   const handleImputChange = ({target}) =>{
 
   setValues({
@@ -12,7 +16,7 @@ export const useForm = (estadoInicial = {}) => {
   });
   }
 
-  return [values , handleImputChange];
+  return [values , handleImputChange, reset];
 
 }
 
